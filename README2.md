@@ -35,7 +35,7 @@ This readme will contain an index to features and their location in code.
 - Reference: https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/ 
 
 ### IntelliJ 
-#### Make sure you click apply before clinking ok after changing settings
+#### Make sure you click apply before clicking ok after changing settings
 - Import as a maven project.  A simple way to do this is to Open File and select the pom.xml.
 - Make sure IntelliJ is set up to compile to Java 11
   - PC
