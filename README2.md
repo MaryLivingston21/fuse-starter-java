@@ -38,23 +38,27 @@ This readme will contain an index to features and their location in code.
 #### Make sure you click apply before clinking ok after changing settings
 - Import as a maven project.  A simple way to do this is to Open File and select the pom.xml.
 - Make sure IntelliJ is set up to compile to Java 11
-  - PC: In IntelliJ navigate to File -> Settings -> Build, Execution, Deployment -> Compiler -> Java Compiler and set the target bytecode version to 11
-  - MAC: In IntelliJ navigate to IntelliJ IDEA -> Preferences -> Build, Execution, Deployment -> Compiler -> Java Compiler and set the target bytecode version to 11
+  - PC
+    - In IntelliJ navigate to File -> Settings -> Build, Execution, Deployment -> Compiler -> Java Compiler and set the target bytecode version to 11
+  - MAC
+    - In IntelliJ navigate to IntelliJ IDEA -> Preferences -> Build, Execution, Deployment -> Compiler -> Java Compiler and set the target bytecode version to 11
   - Navigate to File -> Project Structure
     - Under "Project", make sure both Project SDK and project language level are both set to Java 11
     - Under "Module", make sure the language level is 11
-- DEPRECIATED STEP
-  - Install lombok: https://projectlombok.org/setup/intellij.
+- DEPRECIATED STEP: Install lombok: https://projectlombok.org/setup/intellij.
 - Set code style settings, which will allow auto-formatting of code to match the Google style guide
-  - PC: In IntelliJ navigate to File -> Settings -> Editor -> Code Style -> Java
-  - MAC:  In IntelliJ navigate to IntelliJ IDEA -> Preferences -> Editor -> Code Style -> Java
+  - PC
+    - In IntelliJ navigate to File -> Settings -> Editor -> Code Style -> Java
+  - MAC
+    - In IntelliJ navigate to IntelliJ IDEA -> Preferences -> Editor -> Code Style -> Java
   - Next to Scheme click the gear icon -> Import Scheme -> IntelliJ Idea code style XML
   - Choose <project_directory>/style/intellij-java-google-style.xml, and hit OK a few times
 - Run stuff:
   - FUSE has some IntelliJ run configurations checked into the repository under .idea/runConfigurations. These run configs should be automatically imported by IntelliJ and listed in a drop-down in the top-right of the screen. Next to the drop-down are buttons to run the selected run configuration, to run in debug mode, or to run with coverage measurement. If the run configs are automatically found, they may need to be manually imported.
   - On the far-right hand side of the IntelliJ window, there should be a "Maven" pane. Be sure to select starter-java -> Lifecycle -> compile prior to attemping to run.
     - This will generate Java class files based on the protobuf configuration in the project, required for compilation.
-    - MAC: if verification error -> System Preferences -> Security & Privacy -> General -> click 'Allow'
+    - To resolve Mac verification error
+      - System Preferences -> Security & Privacy -> General -> click 'Allow'
   - To run FUSE, select the "Application" run config and click the green play button.
     - This will start the FUSE REST server on port 8080, allowing it to handle requests. Try it out now: http://localhost:8080.
     - Note, logs will be written to <project_directory>/logs as well as being written to stdout.
