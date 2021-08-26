@@ -42,7 +42,9 @@ public interface IexClient {
    * @param range range of time to get stocks historical price
    * @return the historical price for each of the symbols passed in.
    */
-  @RequestMapping(path = "stable/stock/{symbols}/chart/{range}?token=sk_c9b710dae6614eca843a9fd94c1de32e", method = RequestMethod.GET)
-  List<IexHistoricalPrice> getHistoricalPriceForSymbols(@RequestParam("symbols") String[] symbols, @RequestParam("range") String[] range);
+  @GetMapping("/stable/stock/{symbols}/chart/")
+  List<IexHistoricalPrice> getHistoricalPriceForSymbols(@RequestParam("symbols") String[] symbols,
+                                                        @RequestParam("range") String[] range,
+                                                        @RequestParam("token") String token);
 
 }

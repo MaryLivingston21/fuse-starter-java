@@ -58,7 +58,8 @@ public class IexService {
     if (CollectionUtils.isEmpty(symbols)) {
       return Collections.emptyList();
     } else {
-      return iexClient.getHistoricalPriceForSymbols(symbols.toArray(new String[0]), range.toArray(new String[0]));
+      return iexClient.getHistoricalPriceForSymbols(symbols.toArray(new String[0]), range.toArray(new String[0]),
+              Token.getToken());
     }
   }
 
