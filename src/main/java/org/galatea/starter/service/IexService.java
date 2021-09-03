@@ -30,7 +30,7 @@ public class IexService {
    * @return a list of all Stock Symbols from IEX.
    */
   public List<IexSymbol> getAllSymbols() {
-    return iexClient.getAllSymbols();
+    return iexClient.getAllSymbols(Token.getToken());
   }
 
   /**
