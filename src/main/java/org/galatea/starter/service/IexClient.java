@@ -21,7 +21,7 @@ public interface IexClient {
    *
    * @return a list of all of the stock symbols supported by IEX.
    */
-  @GetMapping("/ref-data/symbols")
+  @GetMapping("/stable/ref-data/symbols")
   List<IexSymbol> getAllSymbols();
 
   /**
@@ -30,8 +30,8 @@ public interface IexClient {
    * @param symbols stock symbols to get last traded price for.
    * @return a list of the last traded price for each of the symbols passed in.
    */
-  @GetMapping("/tops/last")
-  List<IexLastTradedPrice> getLastTradedPriceForSymbols(@RequestParam("symbols") String[] symbols);
+  @GetMapping("/stable/tops/last")
+  List<IexLastTradedPrice> getLastTradedPriceForSymbols(@RequestParam("symbols") String[] symbols, @RequestParam("token") String token);
 
   /**
    * Get the historical prices for each stock symbol passed in.  See https://iexcloud.io/docs/api/#historical-prices.

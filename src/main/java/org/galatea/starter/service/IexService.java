@@ -43,7 +43,7 @@ public class IexService {
     if (CollectionUtils.isEmpty(symbols)) {
       return Collections.emptyList();
     } else {
-      return iexClient.getLastTradedPriceForSymbols(symbols.toArray(new String[0]));
+      return iexClient.getLastTradedPriceForSymbols(symbols.toArray(new String[0]), Token.getToken());
     }
   }
 
