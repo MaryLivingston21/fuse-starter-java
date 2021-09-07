@@ -84,19 +84,6 @@ public class IexRestControllerTest extends ASpringTest {
   }
 
   @Test
-  public void testGetHistoricalPriceEmpty() throws Exception {
-
-    MvcResult result = this.mvc.perform(
-            org.springframework.test.web.servlet.request.MockMvcRequestBuilders
-                .get("/iex/historicalPrice?symbols=&range=")
-                .accept(MediaType.APPLICATION_JSON_VALUE))
-        .andExpect(status().isOk())
-        .andExpect(jsonPath("$", is(Collections.emptyList())))
-        .andReturn();
-  }
-
-
-  @Test
   public void testGetLastHistoricalPrice() throws Exception {
 
     MvcResult result = this.mvc.perform(
@@ -112,4 +99,17 @@ public class IexRestControllerTest extends ASpringTest {
         .andExpect(jsonPath("$[0].symbol", is("FB")))
         .andReturn();
   }
+
+  @Test
+  public void testGetHistoricalPriceEmpty() throws Exception {
+
+    MvcResult result = this.mvc.perform(
+            org.springframework.test.web.servlet.request.MockMvcRequestBuilders
+                .get("/iex/historicalPrice?symbols=&range=")
+                .accept(MediaType.APPLICATION_JSON_VALUE))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$", is(Collections.emptyList())))
+        .andReturn();
+  }
+
 }
